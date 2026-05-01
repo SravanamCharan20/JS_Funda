@@ -51,3 +51,8 @@ function sum(a, b) {
 
 console.log(sum.call(null, 1, 2)); // 3
 console.log(sum.apply(null, [1, 2])); // 3
+
+//map function
+const numbers = [1, 2, 3];
+const doubled = numbers.map((it) => it * 2);
+console.log(doubled);
