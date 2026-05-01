@@ -8,29 +8,38 @@ Object.keys(obj).forEach((key) => {
   console.log(`key : ${key} : value: ${obj[key]}`);
 });
 
-
 // About Spread
 // copy → new object (new pointer) ✅
-// Nested objects inside → same reference (shared pointer) 
+// Nested objects inside → same reference (shared pointer)
 
 // for objects if we do spread it creates a new copy object
 const original = {
-  username : "charan"
-}
+  username: "charan",
+};
 const copy = { ...original };
-copy.username = "meghana"
-console.log("COPY",copy.username); // Meghana
-console.log("ORIGINAL",original.username); //charan 
-
-
+copy.username = "meghana";
+console.log("COPY", copy.username); // Meghana
+console.log("ORIGINAL", original.username); //charan
 
 // for nested objects if we do spread it points to same reference
-const original = {
-  username : {
-    name : "charan"
-  }
+const original2 = {
+  username: {
+    name: "charan",
+  },
+};
+const copy2 = { ...original2 };
+copy2.username.user = "meghana";
+console.log("COPY", copy2.username.user); // Meghana
+console.log("ORIGINAL", original2.username.user); //meghana
+
+// rest is used for the collecting the elements
+// spread is used for the expanding the elements
+
+function sum(...numbers) {
+  return numbers.reduce((acc, it) => acc + it, 0);
 }
-const copy = { ...original };
-copy.username.user = "meghana"
-console.log("COPY",copy.username.user); // Meghana
-console.log("ORIGINAL",original.username.user); //meghana
+
+console.log(sum(1, 2, 3, 4)); // rest opertion usage
+
+const array = [1, 2, 3, 4, 5];
+console.log(...array); // expanding usage by spread
