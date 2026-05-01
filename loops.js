@@ -43,3 +43,11 @@ console.log(sum(1, 2, 3, 4)); // rest opertion usage
 
 const array = [1, 2, 3, 4, 5];
 console.log(...array); // expanding usage by spread
+
+// call and apply uses to invoke the functions but the only difference is apply takes arguments as in "array" format
+function sum(a, b) {
+  return a + b;
+}
+
+console.log(sum.call(null, 1, 2)); // 3
+console.log(sum.apply(null, [1, 2])); // 3
