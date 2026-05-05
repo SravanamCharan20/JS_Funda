@@ -56,3 +56,10 @@ console.log(sum.apply(null, [1, 2])); // 3
 const numbers = [1, 2, 3];
 const doubled = numbers.map((it) => it * 2);
 console.log(doubled);
+
+// How do you add, remove, and update elements in an array?
+const dummy_arr = [1,2,3,4]
+dummy_arr.push(5)
+dummy_arr.unshift(6)
+console.log(dummy_arr);
+dummy_arr.splice(0,2,1.5);
